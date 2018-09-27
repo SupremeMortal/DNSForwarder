@@ -8,6 +8,7 @@ import org.itxtech.nemisys.event.player.PlayerLoginEvent;
 import org.itxtech.nemisys.plugin.PluginBase;
 import org.itxtech.nemisys.utils.Config;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,7 @@ public class DNSForwarder extends PluginBase implements Listener {
             config = getConfig();
         }
 
-        List<Map<String, Object>> forward = config.getList("forward", null);
+        List<Map<String, Object>> forward = config.getList("forward", Collections.emptyList());
 
         for (Map<String, Object> map : forward) {
             for (Map.Entry<String, Object> entry : map.entrySet()) {
